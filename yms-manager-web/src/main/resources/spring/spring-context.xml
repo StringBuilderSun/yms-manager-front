@@ -8,7 +8,6 @@
       http://www.springframework.org/schema/context/spring-context.xsd"
        default-lazy-init="true">
     <context:property-placeholder location="classpath*:app-env.properties"/>
-    <!--<context:component-scan base-package="com.market.stock"/>-->
-    <!--<import resource="spring-datasource.xml"/>-->
-    <!--<import resource="dubbo-provider.xml"/>-->
+    <context:component-scan base-package="com.yms.market"/>
+    <import resource="dubbo-consumer.xml"/>
 </beans>

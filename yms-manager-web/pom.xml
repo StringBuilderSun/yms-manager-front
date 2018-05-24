@@ -2,23 +2,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <artifactId>yms.manager.front</artifactId>
-        <groupId>com.yms.market</groupId>
+        <groupId>com.yms.manager</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <packaging>war</packaging>
-
     <name>yms.manager.web</name>
     <artifactId>yms.manager.web</artifactId>
     <dependencies>
         <dependency>
-            <groupId>com.yms.market</groupId>
-            <artifactId>com.market.facade</artifactId>
+            <groupId>com.yms.manager</groupId>
+            <artifactId>yms.manager.common</artifactId>
         </dependency>
         <dependency>
             <groupId>com.yms.market</groupId>
-            <artifactId>yms.manager.common</artifactId>
+            <artifactId>com.market.facade</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>

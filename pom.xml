@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.yms.market</groupId>
+    <groupId>com.yms.manager</groupId>
     <artifactId>yms.manager.front</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
@@ -30,28 +30,24 @@
         <zkclient.version>0.1</zkclient.version>
         <zookeeper.version>3.4.7</zookeeper.version>
         <dubbo.version>2.5.3</dubbo.version>
+        <com.yms.market>1.0-SNAPSHOT</com.yms.market>
     </properties>
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.yms.market</groupId>
-                <artifactId>com.market.facade</artifactId>
-                <version>1.0-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.yms.market</groupId>
-                <artifactId>com.market.persistence</artifactId>
-                <version>1.0-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.yms.market</groupId>
+                <groupId>com.yms.manager</groupId>
                 <artifactId>yms.manager.common</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.yms.market</groupId>
+                <groupId>com.yms.manager</groupId>
                 <artifactId>yms.manager.service</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.yms.market</groupId>
+                <artifactId>com.market.facade</artifactId>
+                <version>${com.yms.market}</version>
             </dependency>
             <!-- spring -->
             <dependency>
