@@ -12,12 +12,16 @@
     <artifactId>yms.manager.web</artifactId>
     <dependencies>
         <dependency>
+            <groupId></groupId>
+            <artifactId>y</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.yms.manager</groupId>
             <artifactId>yms.manager.common</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.yms.market</groupId>
-            <artifactId>com.market.facade</artifactId>
+            <groupId>com.yms.manager</groupId>
+            <artifactId>yms.manager.service</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>

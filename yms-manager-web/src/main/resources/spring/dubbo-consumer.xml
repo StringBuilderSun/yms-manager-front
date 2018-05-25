@@ -15,6 +15,5 @@
     <dubbo:registry protocol="zookeeper" address="zookeeper://10.0.0.61:2181"/>
 
     <dubbo:reference id="stockManagerService" interface="com.market.stock.service.StockManagerService"/>
-    <dubbo:reference id="ymsStockManagerService" interface="com.market.stock.service.YmsStockManagerService"/>
-    <dubbo:reference id="pageShowService" interface="com.market.stock.service.PageShowService"/>
+
 </beans>
