@@ -21,28 +21,11 @@ import java.util.UUID;
 @Controller
 @Slf4j
 public class UserController {
-    @Autowired
-    private YmsStockManagerService ymsStockManagerService;
 
-    @RequestMapping("login/uid")
-    public String login(@PathVariable String uid) {
-        String traceLogId = UUID.randomUUID().toString();
-        MDC.put(AlivnMarker.TRACE_LOG_ID, traceLogId);
-        log.info("用户请求登陆，用户id:{}", uid);
-        StockManagerRequest request = new StockManagerRequest();
-        request.setRequestType(RequestType.SingleQuery);
-        request.setTablesEnum(TablesEnum.USER_TABLE);
-        User user = new User();
-        user.setUid(Integer.parseInt(uid));
-        request.setDataModel(user);
-        Object result = ymsStockManagerService.findByKeyId(request, traceLogId);
-        if (request != null) {
-            user = (User) result;
-            log.info("用户登陆成功！");
-            return user.toString();
-        } else {
-            log.info("用户登陆失败！！！");
-            return "用户登陆失败！！！";
-        }
+
+    @RequestMapping("/")
+    public String login() {
+        System.out.println("跳转拉...");
+        return "index";
     }
 }
