@@ -15,10 +15,10 @@
             <groupId>com.yms.market</groupId>
             <artifactId>com.market.facade</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.yms.manager</groupId>
-            <artifactId>yms.manager.common</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.yms.manager</groupId>-->
+            <!--<artifactId>yms.manager.common</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
