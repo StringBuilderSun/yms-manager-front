@@ -1,9 +1,9 @@
 package com.yms.manager.DaoService;
 
-import com.market.stock.enums.ResultStatusEnum;
 import com.market.stock.model.StockManagerRequest;
 import com.market.stock.model.StockManagerResponse;
 import com.market.stock.service.StockManagerService;
+import com.yms.manager.model.ServiceResult;
 import com.yms.utils.dubbo.DubboResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,15 +23,26 @@ public class YmsStockManagerService {
      *
      * @param request    请求参数
      * @param traceLogId 日志id
-     * @param <T>
      * @return
      */
-    public <T> T findByKeyId(StockManagerRequest request, String traceLogId) {
+    public ServiceResult findByKeyId(StockManagerRequest request, String traceLogId) {
         log.info("调用数据仓储请求:{}", request);
-        DubboResult<StockManagerResponse> response = stockManagerService.StockDataBaseService(request, traceLogId);
+        DubboResult<StockManagerResponse> response = null;
+        try {
+            response = stockManagerService.StockDataBaseService(request, traceLogId);
+        } catch (Exception e) {
+            log.error("远程服务调用超时!!!");
+            return new ServiceResult(null, "SYS999990", "服务超时");
+        }
+        log.info("服务响应结果:{}", response);
         if (response.isSuccess() == true) {
-            log.info("服务响应码:{},服务响应描述:{},服务响应结果:{}", response.getErrorCode(), response.getErrorDesc(), response.getResult());
-            return (T) response.getResult();
+            StockManagerResponse result = response.getResult();
+            if (request != null) {
+                return new ServiceResult(result.getResponseModel(), result.getResponseCode(), result.getResponseDesc());
+            } else {
+                log.error("远程服务调用，系统内部异常！");
+                return new ServiceResult(null, "SYS999999", "服务内部异常");
+            }
         } else {
             log.info("服务调用失败！！！");
             return null;
