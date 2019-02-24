@@ -11,10 +11,10 @@
     <artifactId>yms.manager.service</artifactId>
     <dependencies>
         <!--yms-market-stock 的api-->
-        <dependency>
-            <groupId>com.yms.market</groupId>
-            <artifactId>com.market.facade</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.yms.market</groupId>-->
+            <!--<artifactId>com.market.facade</artifactId>-->
+        <!--</dependency>-->
         <!--<dependency>-->
             <!--<groupId>com.yms.manager</groupId>-->
             <!--<artifactId>yms.manager.common</artifactId>-->

@@ -44,11 +44,11 @@
                 <artifactId>yms.manager.service</artifactId>
                 <version>${project.version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.yms.market</groupId>
-                <artifactId>com.market.facade</artifactId>
-                <version>${com.yms.market}</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>com.yms.market</groupId>-->
+                <!--<artifactId>com.market.facade</artifactId>-->
+                <!--<version>${com.yms.market}</version>-->
+            <!--</dependency>-->
             <!-- spring -->
             <dependency>
                 <groupId>org.springframework</groupId>

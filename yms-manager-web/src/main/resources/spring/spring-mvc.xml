@@ -20,9 +20,9 @@
     <!--DispatcherServlet不会拦截以/*.html结尾的所有请求路径，并当作静态资源交由Servlet处理。-->
     <!--location表示webapp目录下的文件路径  mapping 表示请求的路径 -->
     <!--推荐这样写-->
-    <mvc:resources location="WEB-INF/statics/fonts/" mapping="/fonts/**"/>
-    <mvc:resources location="WEB-INF/statics/js/" mapping="/js/**"/>
-    <mvc:resources location="WEB-INF/statics/css/" mapping="/css/**"/>
+    <mvc:resources location="WEB-INF/static/fonts/" mapping="/fonts/**"/>
+    <mvc:resources location="WEB-INF/static/js/" mapping="/js/**"/>
+    <mvc:resources location="WEB-INF/static/css/" mapping="/css/**"/>
 
     <!--<mvc:resources mapping="WEB-INF/static/" location="WEB-INF/static/**"/>-->
     <!--视图解析器-->
